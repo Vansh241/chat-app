@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import Homepage from './pages/Homepage.jsx'
+import HomePage from './pages/HomePage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
 import { Toaster } from "react-hot-toast"
@@ -13,7 +13,7 @@ const App = () => {
     <div className="bg-[url('/bgImage.svg')] bg-contain">
       <Toaster/>
       <Routes>
-        <Route path='/' element={authUser ? <Homepage/> : <Navigate to="/login"/>} />
+        <Route path='/' element={authUser ? <HomePage/> : <Navigate to="/login"/>} />
         <Route path='/login' element={ !authUser ? <LoginPage/> : <Navigate to="/"/>} />
         <Route path='/profile' element={authUser ? <ProfilePage/> : <Navigate to="/login"/>} />
       </Routes>
